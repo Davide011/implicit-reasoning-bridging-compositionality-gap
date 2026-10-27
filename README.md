@@ -80,31 +80,58 @@ The result is established on a controlled synthetic task. Additional experiments
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/Deep--Learning-PyTorch-ee4c2c.svg)](https://pytorch.org/)
 [![Transformers](https://img.shields.io/badge/Transformers-HuggingFace-FF6F61.svg)](https://huggingface.co/docs/transformers/index)
-[![Causal Tracing](https://img.shields.io/badge/Analysis-Causal_Tracing-6f42c1.svg)](https://github.com/Davide011/Thesis_public/tree/main/src/Mechanistic_interpretability)
-[![Logit Lens](https://img.shields.io/badge/Analysis-Logit_Lens-ff69b4.svg)](https://github.com/Davide011/Thesis_public/tree/main/src/Mechanistic_interpretability)
-[![HPC](https://img.shields.io/badge/Compute-HPC_Clusters-008000.svg)](https://github.com/Davide011/Thesis_public/tree/main/scripts/Training_files_HPC)
+[![Causal Tracing](https://img.shields.io/badge/Analysis-Causal_Tracing-6f42c1.svg)](src/Mechanistic_interpretability/causal_tracing_composition.py)
+[![Logit Lens](https://img.shields.io/badge/Analysis-Logit_Lens-ff69b4.svg)](src/Mechanistic_interpretability/causal_tracing_composition.py)
+[![HPC](https://img.shields.io/badge/Compute-HPC_Clusters-008000.svg)](scripts/Training_files_HPC/)
 
 The experiments combine **controlled data generation, Transformer training, mechanistically motivated intervention design, ablation studies, and exact-match evaluation**. The original thesis project also includes **causal tracing / activation patching** and **layerwise logit-lens-style analysis** of Transformer computations. 
 
-The existing [thesis research codebase](https://github.com/Davide011/Thesis_public) provides the following reference structure:
+This repository contains the following curated structure. Dataset variants and the modified dependency packages are summarized at directory level:
 
 ```text
-src/
-├── main_multy_GPU.py             # Model training
-├── eval_qa.py                    # Evaluation
-└── Mechanistic_interpretability/ # Causal tracing / layerwise analysis
+Data/
+├── Data_Composition/                 # Composition datasets (42 variants)
+└── data_composition_train_example.json
 Research_Notebooks/
-├── Data_Generation/              # Synthetic knowledge graphs
-├── Experiments/                  # Experimental investigation
-└── Figures/                      # Result analysis and plots
+├── Data_Generation/
+│   ├── composition.ipynb             # Position-aligned intervention generator
+│   └── LICENSE
+├── Experiments/
+│   ├── EXPERIMENT_A..ipynb
+│   └── EXPERIMENT_OOD.ipynb
+├── Figures/
+│   ├── Accuracy_Loss.ipynb
+│   ├── t_sne.ipynb
+│   ├── t_sne_CASO_A.ipynb
+│   ├── t_sne_MASK.ipynb
+│   └── visualization.ipynb
+└── Final_notebook.ipynb
+assets/
+├── figure1_with_baseline.png
+└── tree_controlled_ablation_figures.png
 scripts/
-└── Training_files_HPC/           # Cluster execution scripts
+├── Training_files_HPC/
+│   ├── myjob_MASK_B_ID_OOD.sh
+│   └── myjob_mask_B.sh
+└── causal_tracing/
+    └── A_myjob_causal_T.sh
+simpletransformers/                  # Modified SimpleTransformers dependency
+src/
+├── Mechanistic_interpretability/
+│   └── causal_tracing_composition.py # Adapted causal tracing / logit lens
+├── Figures_my.py                    # Plotting helpers
+├── eval_qa.py                       # Evaluation of saved predictions
+├── inference_script.py
+├── inference_utils.py
+├── main.py
+├── main_multy_GPU.py                # Model training
+└── utils.py
+transformers/                        # Modified Transformers dependency
+.gitignore
+README.md
 ```
 
-<!-- Release checklist (internal): Replace the reference tree with the actual target-repo
-     layout once files are selected and published. Verify executable reproduction steps,
-     artifact-to-figure provenance, dependencies, paths, and licenses before publication.
-     Do not copy all thesis files merely to match this tree. -->
+The full [thesis research codebase](https://github.com/Davide011/Thesis_public) contains the additional experiments and artifacts outside this selection.
 
 ## Paper and acknowledgments
 
