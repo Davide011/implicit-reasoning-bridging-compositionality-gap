@@ -86,49 +86,22 @@ The result is established on a controlled synthetic task. Additional experiments
 
 The experiments combine **controlled data generation, Transformer training, mechanistically motivated intervention design, ablation studies, and exact-match evaluation**. The original thesis project also includes **causal tracing / activation patching** and **layerwise logit-lens-style analysis** of Transformer computations. 
 
-This repository contains the following curated structure. Dataset variants and the modified dependency packages are summarized at directory level:
+Start with [data generation](Research_Notebooks/Data_Generation/composition.ipynb), [training](src/main_multy_GPU.py), [evaluation](src/eval_qa.py), or the [experiment notebooks](Research_Notebooks/Experiments/).
 
 ```text
-Data/
-├── Data_Composition/                 # Composition datasets (42 variants)
-└── data_composition_train_example.json
+Data/                               # Composition datasets and example
 Research_Notebooks/
-├── Data_Generation/
-│   ├── composition.ipynb             # Position-aligned intervention generator
-│   └── LICENSE
-├── Experiments/
-│   ├── EXPERIMENT_A..ipynb
-│   └── EXPERIMENT_OOD.ipynb
-├── Figures/
-│   ├── Accuracy_Loss.ipynb
-│   ├── t_sne.ipynb
-│   ├── t_sne_CASO_A.ipynb
-│   ├── t_sne_MASK.ipynb
-│   └── visualization.ipynb
-└── Final_notebook.ipynb
-assets/
-├── figure1_with_baseline.png
-└── tree_controlled_ablation_figures.png
-scripts/
-├── Training_files_HPC/
-│   ├── myjob_MASK_B_ID_OOD.sh
-│   └── myjob_mask_B.sh
-└── causal_tracing/
-    └── A_myjob_causal_T.sh
-simpletransformers/                  # Modified SimpleTransformers dependency
+├── Data_Generation/                # Position-aligned data intervention
+├── Experiments/                    # Experimental investigation
+└── Figures/                        # Result analysis and plots
 src/
-├── Mechanistic_interpretability/
-│   └── causal_tracing_composition.py # Adapted causal tracing / logit lens
-├── Figures_my.py                    # Plotting helpers
-├── eval_qa.py                       # Evaluation of saved predictions
-├── inference_script.py
-├── inference_utils.py
-├── main.py
 ├── main_multy_GPU.py                # Model training
-└── utils.py
-transformers/                        # Modified Transformers dependency
-.gitignore
-README.md
+├── eval_qa.py                       # Evaluation of saved predictions
+└── Mechanistic_interpretability/   # Causal tracing and logit lens
+scripts/                            # HPC training and causal-tracing jobs
+assets/                             # README figures
+simpletransformers/                 # Modified SimpleTransformers dependency
+transformers/                       # Modified Transformers dependency
 ```
 
 The full [thesis research codebase](https://github.com/Davide011/Thesis_public) contains the additional experiments and artifacts outside this selection.
