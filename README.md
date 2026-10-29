@@ -106,7 +106,7 @@ transformers/                       # Modified Transformers dependency
 
 The full [thesis research codebase](https://github.com/Davide011/Thesis_public) contains the additional experiments and artifacts outside this selection.
 
-## Paper and acknowledgments
+## Paper 
 
 **Davide Venuto and Leonardo Venuto.** *Implicit Reasoning in Transformers: Bridging the Compositionality Gap in GPT-2-like Models.* [Public manuscript link to add when available].
 
