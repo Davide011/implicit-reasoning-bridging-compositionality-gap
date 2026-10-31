@@ -108,6 +108,6 @@ The full [thesis research codebase](https://github.com/Davide011/Thesis_public) 
 
 ## Paper 
 
-**Davide Venuto and Leonardo Venuto.** *Implicit Reasoning in Transformers: Bridging the Compositionality Gap in GPT-2-like Models.* [Public manuscript link to add when available].
+**Davide Venuto and Leonardo Venuto.** [*Implicit Reasoning in Transformers: Bridging the Compositionality Gap in GPT-2-like Models.* ](https://arxiv.org/abs/2610.39016).
 
 This work builds on the controlled setup and earlier circuit analysis in **Wang et al. (NeurIPS 2024)**, [*Grokked Transformers are Implicit Reasoners*](https://arxiv.org/abs/2405.15071). The position-aligned training intervention and ablation experiments presented here are distinct from that baseline.
